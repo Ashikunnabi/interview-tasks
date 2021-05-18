@@ -1,0 +1,140 @@
+<!-- Button trigger modal -->
+{% comment %} <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">
+  Launch demo modal
+</button> {% endcomment %}
+
+<!-- Add user Modal -->
+<div class="modal fade" id="userAddModal" tabindex="-1" role="dialog" aria-labelledby="userAddModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="userAddModalLabel">Add User</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form id="addUserForm">
+        <div class="modal-body">
+            <div class="md-form my-3">
+                <input type="text" id="addUserForm-first_name" class="form-control validate" name="first_name" required>
+                <label data-error="wrong" data-success="right" for="addUserForm-first_name">First Name</label>
+            </div>
+            <div class="md-form my-3">
+                <input type="text" id="addUserForm-last_name" class="form-control validate" name="last_name" required>
+                <label data-error="wrong" data-success="right" for="addUserForm-last_name">Last Name</label>
+            </div>
+            <!-- Is Child -->
+            <div class="custom-control custom-checkbox my-3">
+                <input type="checkbox" class="custom-control-input" id="addUserForm-is_child" name="is_child">
+                <label class="custom-control-label" for="addUserForm-is_child">Child</label>
+            </div>
+            <select class="browser-default custom-select hidden parent" name="parent">
+                <option selected disabled>Select Parent</option>
+            </select>
+            <div class="md-form my-3 address">
+                <input type="text" id="addUserForm-street" class="form-control validate" name="street">
+                <label data-error="wrong" data-success="right" for="addUserForm-street">Street</label>
+            </div>
+            <div class="md-form my-3 address">
+                <input type="text" id="addUserForm-city" class="form-control validate" name="city">
+                <label data-error="wrong" data-success="right" for="addUserForm-city">City</label>
+            </div>
+            <div class="md-form my-3 address">
+                <input type="text" id="addUserForm-state" class="form-control validate" name="state">
+                <label data-error="wrong" data-success="right" for="addUserForm-state">State</label>
+            </div>
+            <div class="md-form my-3 address">
+                <input type="text" id="addUserForm-zip" class="form-control validate" name="zip">
+                <label data-error="wrong" data-success="right" for="addUserForm-zip">Zip</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- Edit user Modal -->
+<div class="modal fade" id="userEditModal" tabindex="-1" role="dialog" aria-labelledby="userEditModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="userEditModalLabel">Edit User</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form id="editUserForm">
+        <div class="modal-body">
+            <div class="md-form my-3">
+                <input type="text" id="editUserForm-first_name" class="form-control validate" name="first_name" autofocus required>
+                <label data-error="wrong" data-success="right" for="editUserForm-first_name">First Name</label>
+            </div>
+            <div class="md-form my-3">
+                <input type="text" id="editUserForm-last_name" class="form-control validate" name="last_name" autofocus required>
+                <label data-error="wrong" data-success="right" for="editUserForm-last_name">Last Name</label>
+            </div>
+            <!-- Is Child -->
+            <div class="custom-control custom-checkbox my-3">
+                <input type="checkbox" class="custom-control-input" id="editUserForm-is_child" name="is_child">
+                <label class="custom-control-label" for="editUserForm-is_child">Child</label>
+            </div>
+            <select class="browser-default custom-select hidden parent" name="parent">
+                <option selected disabled>Select Parent</option>
+            </select>
+            <div class="md-form my-3 address">
+                <input type="text" id="addFoeditUserFormrm-street" class="form-control validate" name="street" autofocus>
+                <label data-error="wrong" data-success="right" for="editUserForm-street">Street</label>
+            </div>
+            <div class="md-form my-3 address">
+                <input type="text" id="editUserForm-city" class="form-control validate" name="city" autofocus>
+                <label data-error="wrong" data-success="right" for="editUserForm-city">City</label>
+            </div>
+            <div class="md-form my-3 address">
+                <input type="text" id="editUserForm-state" class="form-control validate" name="state" autofocus>
+                <label data-error="wrong" data-success="right" for="editUserForm-state">State</label>
+            </div>
+            <div class="md-form my-3 address">
+                <input type="text" id="editUserForm-zip" class="form-control validate" name="zip" autofocus>
+                <label data-error="wrong" data-success="right" for="editUserForm-zip">Zip</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- Delete user Modal -->
+<div class="modal fade" id="userDeleteModal" tabindex="-1" role="dialog" aria-labelledby="userDeleteModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header red white-text">
+        <h5 class="modal-title" id="userDeleteModalLabel">Delete User</h5>
+        <button type="button" class="close white-text" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form id="deleteUserForm">
+        <div class="modal-body">
+            Are you sure? All releted childrens will also delete.
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-danger">Yes, Delete</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

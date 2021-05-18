@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interview Task (User App)</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="{% static 'user/css/style.css' %}">
+</head>
+<body>
+    <div class="headerAndBody">
+        {% comment %} adding header element {% endcomment %}
+        {% include 'user/header.html' %}
+
+        {% comment %} adding body content {% endcomment %}
+        {% block content %}{% endblock %}
+    </div>
+    {% comment %} adding footer element {% endcomment %}
+    {% include 'user/footer.html' %}
+
+    {% comment %} adding modal element {% endcomment %}
+    {% include 'user/modal.html' %}
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <!-- Bootstrap Notify -->
+    <script type="text/javascript" src="{% static 'user/js/notify.min.js' %}"></script>
+    <!-- Custom JavaScript -->
+    <script type="text/javascript" src="{% static 'user/js/script.js' %}"></script>
+</body>
+</html>

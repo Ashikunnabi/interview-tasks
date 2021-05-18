@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: red;
+    min-height: 100px;
+    position: relative;
+    padding: 20px;
+}
+
+.notification-success {
+    background-color: #10ce10;
+    color: white;
+    padding: 10px;
+    border-radius: 7px;
+    width: 230px;
+    float: right;
+    display: none;
+}
+
+.notification-error {
+    background-color: yellow;
+    color: black;
+    padding: 10px;
+    border-radius: 7px;
+    width: 230px;
+    float: right;
+    display: none;
+}
+
+.container {
+    position: absolute;
+    top: 75px;
+    width: 100%;
+}
+
+.form_container {
+    background-color: white;
+    min-height: 400px;
+    width: 50%;
+    justify-content: center;
+    margin: auto;
+    padding: 20px;
+    -webkit-box-shadow: 0px 0px 34px 0px rgba(112,112,112,1);
+    -moz-box-shadow: 0px 0px 34px 0px rgba(112,112,112,1);
+    box-shadow: 0px 0px 34px 0px rgba(112,112,112,1);
+}
+
+.form_container h1 {
+    text-align: center;
+    padding: 5px;
+}
+
+.form_container form label {
+    font-size: 1.3em;
+}
+
+.form_container form input, select {
+    width: 100%;
+    height: 30px;
+    font-size: 1em;
+}
+
+.form_container form textarea {
+    width: 100%;
+    font-size: 1em;
+}
+
+.form_container form .buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+#reset, #submit {
+    width: 40%;
+    flex-direction: row;
+}
+

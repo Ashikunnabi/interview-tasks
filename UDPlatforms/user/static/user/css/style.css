@@ -1,0 +1,26 @@
+.headerAndBody {
+    min-height: 90vh;
+}
+
+td i {
+    margin: 5px;
+    cursor: pointer;
+    opacity: 0;
+    transition: transform .2s;
+}
+
+td i:hover {
+    transform: scale(1.5);
+}
+
+td i:nth-child(2) {
+    color: red;
+}
+
+tr:hover td i {
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}

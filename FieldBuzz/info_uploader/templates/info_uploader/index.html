@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>An Interview Task</title>
+    <link rel="stylesheet" href="{% static 'info_uploader/css/style.css' %}">
+</head>
+<body>
+<div class="header">
+    <p class="notification-success">Information submission successful.</p>
+    <p class="notification-error"></p>
+</div>
+<div class="container">
+    <div class="form_container">
+        <h1>Personal Information</h1><br><br>
+
+        <form action="{% url 'personal_information' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="phone">Phone:</label><br>
+            <input type="text" id="phone" name="phone" pattern="^(?:\+88|01)?\d{11}$" required><br><br>
+            <label for="full_address">Full address:</label><br>
+            <textarea id="full_address" rows="5" name="full_address" required></textarea><br><br><br>
+            <label for="name_of_university">Name of university:</label><br>
+            <input type="text" id="name_of_university" name="name_of_university" required><br><br>
+            <label for="graduation_year">Graduation year:</label><br>
+            <input type="number" id="graduation_year" name="graduation_year" min="2015" max="2020" required><br><br>
+            <label for="cgpa">CGPA:</label><br>
+            <input type="text" id="cgpa" name="cgpa" min="2.0" max="4.0" pattern="^[1-9]\d*(\.\d+)?$"><br><br>
+            <label for="experience_in_months">Experience (months):</label><br>
+            <input type="number" id="experience_in_months" name="experience_in_months" min="0" max="100"><br><br>
+            <label for="current_work_place_name">Current workplace name:</label><br>
+            <input type="text" id="current_work_place_name" name="current_work_place_name"><br><br>
+            <label for="applying_in">Applying in:</label><br>
+            <select type="text" id="applying_in" name="applying_in" required><br>
+                <option value="">Select</option>
+                <option value="Mobile">Mobile</option>
+                <option value="Backend">Backend</option>
+            </select><br><br>
+            <label for="expected_salary">Expected salary:</label><br><br>
+            <input type="number" id="expected_salary" name="expected_salary" min="15000" max="60000" required><br><br>
+            <label for="field_buzz_reference">Field Buzz reference:</label><br>
+            <input type="text" id="field_buzz_reference" name="field_buzz_reference"><br><br>
+            <label for="github_project_url">Github project url:</label><br>
+            <input type="url" id="github_project_url" name="github_project_url" required><br><br>
+            <label for="cv_file">Upload CV:</label><br>
+            <input type="file" id="cv_file" name="cv_file" accept=".pdf" required><br><br>
+            <br>
+            <div class="buttons">
+                <input type="reset" id="reset" name="reset">
+                <input type="submit" id="submit" name="submit">
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    {#notification hide/show#}
+    let success = "{{ success }}";
+    if (success === 'True') {
+        document.getElementsByClassName('notification-success')[0].style.display = "block";
+        setTimeout(function (e) {
+            document.getElementsByClassName('notification-success')[0].style.display = "none";
+        }, 5000);
+    }
+    if (success === 'False') {
+        document.getElementsByClassName('notification-error')[0].innerHTML = "{{ response }}";
+        document.getElementsByClassName('notification-error')[0].style.display = "block";
+        setTimeout(function (e) {
+            document.getElementsByClassName('notification-error')[0].style.display = "none";
+        }, 5000);
+    }
+</script>
+</body>
+</html>
